@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover; /* Prevents the background image from tiling */
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative; /* Added */
+  width: 400px; /* Fixed width */
+  background: rgba(44, 44, 44, 0.7);
+  border-radius: 10px;
+  border: 3px solid rgb(0, 0, 0);
+  padding: 20px;
+  box-sizing: border-box;
+  color: #ffffff; /* Text color */
+}
+
+h1 {
+  font-weight: bold;
+}
+
+p {
+  padding-bottom: 30px;
+}
+
+footer {
+  text-align: right;
+  color: white;
+  position: fixed; /* Changed to fixed */
+  bottom: -50px;
+  right: 0;
+  margin: 10px; /* Adjusted for spacing */
+}
+
+.row {
+  justify-content: center;
+  display: flex;
+}
+
+.alert {
+  padding: 0.5rem;
+}
+
+.form-wrap h1,
+.form-wrap .form-label {
+  font-weight: 600;
+}
+
+.animate__animated {
+  animation-duration: 1s;
+}
+
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form__group {
+  margin-bottom: 15px;
+  position: absolute; /* Added */
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid rgb(128, 128, 128);
+  outline: 0;
+  font-size: 1.1rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, transform 0.2s; /* Added transform transition */
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__label {
+  display: block;
+  position: inherit;
+  transition: 0.5s ease;
+  font-size: 1rem;
+  color: gray;
+  pointer-events: none;
+  transform: translateY(-30px);
+}
+
+.form__field:focus + .form__label,
+.form__field:not(:placeholder-shown) + .form__label {
+
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  transform: translateY(-60px); /* Adjust the value to move the label up */
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, rgb(255, 255, 255), rgb(167, 167, 167));
+  border-image-slice: 2;
+}
+
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+#user_login + .form__field {
+  padding-top: 500px;
+
+}
+
+.btn {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
